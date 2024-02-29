@@ -43,7 +43,7 @@ const SongItem: React.FC<SongItemProps> = ({ data, onClick }) => {
         <Image
           className="object-cover"
           // Todo:image show nahi ho rahi supabase wali
-          src="/images/liked.png"
+          src={imagePath || "/images/liked.png"}
           fill
           alt="Image"
         />
