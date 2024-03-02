@@ -1,4 +1,5 @@
 "use client";
+
 import useSound from "use-sound";
 import { Song } from "@/types";
 import MediaItem from "./MediaItem";
@@ -12,7 +13,7 @@ import { useEffect, useState } from "react";
 
 interface PlayerContentProps {
   song: Song;
-  songUrl: Promise<string>;
+  songUrl: string;
 }
 
 const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
@@ -46,7 +47,8 @@ const PlayerContent: React.FC<PlayerContentProps> = ({ song, songUrl }) => {
     }
     player.setId(previousSong);
   };
-
+  if (typeof songUrl === "string") {
+  }
   const [play, { pause, sound }] = useSound(songUrl, {
     volume: volume,
     onplay: () => setIsPlaying(true),

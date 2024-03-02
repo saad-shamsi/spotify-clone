@@ -1,6 +1,6 @@
 import { create } from "zustand";
 
-interface PlayStore {
+interface PlayerStore {
   ids: string[];
   activeId?: string;
   setId: (id: string) => void;
@@ -8,7 +8,7 @@ interface PlayStore {
   reset: () => void;
 }
 
-const usePlayer = create<PlayStore>((set) => ({
+const usePlayer = create<PlayerStore>((set) => ({
   ids: [],
   activeId: undefined,
   setId: (id: string) => set({ activeId: id }),
